@@ -17,7 +17,12 @@ def register(username, password):
             count = data["count"]
             count +=1
             data["count"] = count
-            data.update({username:password})
+            data.update({username:{
+            "password":password,
+            "aoo":{"lower":"","upper":"","AAmp":"", "APW":""},
+            "voo":{"lower":"","upper":"","VAmp":"", "VPW":""},
+            "aai":{"lower":"","upper":"","AAmp":"", "APW":"", "ARP":""},
+             "vvi":{"lower":"","upper":"","VAmp":"", "VPW":"", "VRP":""}}})
 
         with open('users.json', 'w') as json_file:
             json.dump(data, json_file)
@@ -39,7 +44,7 @@ def checkPassword(username, password):
     if checkUsername(username):
         with open('users.json') as json_file:
             data = json.load(json_file)
-            if data[username] == password:
+            if data[username]["password"] == password:
                 return True
             else:
                 return False
