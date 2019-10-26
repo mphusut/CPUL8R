@@ -51,6 +51,23 @@ def checkPassword(username, password):
     else:
         return False
 
+def recent(username):
+    with open('users.json') as json_file:
+        data = json.load(json_file)
+        data["recent"] = username
+
+    with open('users.json', 'w') as json_file:
+        json.dump(data, json_file)
+
+def update(username, mode, key, value):
+    with open('users.json') as json_file:
+        data = json.load(json_file)
+
+        data[username][mode][key] = value
+
+    with open('users.json', 'w') as json_file:
+        json.dump(data, json_file)
+
 def deleteUser(username):
     with open('users.json') as json_file:
         data = json.load(json_file)
