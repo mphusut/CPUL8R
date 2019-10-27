@@ -97,3 +97,10 @@ def alert(message):
 
     button = ttk.Button(window, text="Dismiss", command=window.destroy)
     button.pack(pady=3)
+    
+def getRecent():
+    with open('users.json') as json_file:
+        data = json.load(json_file)
+        return data["recent"] 
+        
+    
