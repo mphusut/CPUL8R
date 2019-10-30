@@ -4,6 +4,7 @@ from tkinter import ttk
 import json
 from tkinter import messagebox
 from logins import *
+from inputCorrection import *
 TITLE_FONT = ("Verdana", 20)
 
 # class DCM is used to controll all the pages
