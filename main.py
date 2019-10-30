@@ -6,6 +6,7 @@ from tkinter import messagebox
 from logins import *
 TITLE_FONT = ("Verdana", 20)
 
+# class DCM is used to controll all the pages
 class DCM(tk.Tk):
 
     def __init__(self, *args, **kwargs):
@@ -34,61 +35,67 @@ class DCM(tk.Tk):
         #tkraise brings the page we want that's in the back to the front
         frame.tkraise()
 
+#This is the initial log-in page
 class StartPage(tk.Frame):
 
+    #__init__ method describes what is in our page
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
         ttk.Label(self, text="Welcome", font="TITLE_FONT").grid(row = 0, column=1, padx=30, pady=10)
         self.controller = controller
-        self.username = tk.StringVar()
-        self.password = tk.StringVar()
+        self.username = tk.StringVar()  #variable to store username input later
+        self.password = tk.StringVar()  #variable to store password input later
         ttk.Label(self, text="Username").grid(row = 1, column=0, padx=5, pady=2)
-        ttk.Entry(self, textvariable=self.username).grid(row = 1, column=1, padx=(20,40), pady=2)
+        ttk.Entry(self, textvariable=self.username).grid(row = 1, column=1, padx=(20,40), pady=2)   #textbox input for username
         ttk.Label(self, text="Password").grid(row = 2, column=0, padx=5, pady=2)
-        ttk.Entry(self, textvariable=self.password).grid(row = 2, column=1, padx=(20,40), pady=2)
+        ttk.Entry(self, textvariable=self.password).grid(row = 2, column=1, padx=(20,40), pady=2)   #textbox input for password
 
-        #ttk.Button(self, text="Log In", command=lambda: controller.show_frame(PageOne)).grid(row = 3, column=0, padx=10, pady=10)
-        ttk.Button(self, text="Log In", command=self.login).grid(row = 1, column=2, padx=10, pady=5)
-        ttk.Button(self, text="New User?", command=lambda: controller.show_frame(RegisterPage)).grid(row = 4, column=1,padx=10, pady=5)
+        ttk.Button(self, text="Log In", command=self.login).grid(row = 1, column=2, padx=10, pady=5)    #if button is pressed the login() method below is activated to check the password
+        ttk.Button(self, text="New User?", command=lambda: controller.show_frame(RegisterPage)).grid(row = 4, column=1,padx=10, pady=5) #Button to the Register New User page
 
     def login(self):
+        #Uses methods created in logins.py to verify user authentication, if not creates a popup
         if checkPassword(self.username.get(), self.password.get()):
             recent(self.username.get())
             self.controller.show_frame(PageOne)
         else:
             return alert('Incorrect Username or Password!')
 
+#Page to register new users
 class RegisterPage(tk.Frame):
 
+    #__init__ method describes what is in our page
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
         ttk.Label(self, text="Register", font="TITLE_FONT").grid(row = 0, column=1, padx=30, pady=10)
         self.controller = controller
-        self.username = tk.StringVar()
-        self.password = tk.StringVar()
+        self.username = tk.StringVar()  #variable to store username
+        self.password = tk.StringVar()  #variable to store password
         ttk.Label(self, text="Username").grid(row = 1, column=0, padx=5, pady=2)
         ttk.Entry(self, textvariable=self.username).grid(row = 1, column=1, padx=(20,40), pady=2)
         ttk.Label(self, text="Password").grid(row = 2, column=0, padx=5, pady=2)
         ttk.Entry(self, textvariable=self.password).grid(row = 2, column=1, padx=(20,40), pady=2)
 
-        #ttk.Button(self, text="Log In", command=lambda: controller.show_frame(PageOne)).grid(row = 3, column=0, padx=10, pady=10)
-        ttk.Button(self, text="Register", command=self.adduser).grid(row = 3, column=1, padx=10, pady=5)
-        ttk.Button(self, text="Back", command=lambda: controller.show_frame(StartPage)).grid(row = 4, column=1,padx=10, pady=5)
+        ttk.Button(self, text="Register", command=self.adduser).grid(row = 3, column=1, padx=10, pady=5)     #if button is pressed the adduser() method below is activated
+        ttk.Button(self, text="Back", command=lambda: controller.show_frame(StartPage)).grid(row = 4, column=1,padx=10, pady=5) #Button to go back to the StartPage
 
+    #Method to register new users
     def adduser(self):
-        if checkCountUsers() == False:
+        if checkCountUsers() == False:  #check if there is space for new users, if not create an alert
             return alert('Too Many Users')
-        elif register(self.username.get(), self.password.get()) == True:
+        elif register(self.username.get(), self.password.get()) == True:    #method from logins.py that registers new users. Returns true if registration was successful.
             return alert('Registration Successful')
         else:
-            return alert('User Already Exists')
+            return alert('User Already Exists') #if logins.py returns false, that means a user with that username already exists
 
 class PageOne(tk.Frame):
+
+    #__init__ method describes what is in our page
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
         tk.Frame.__init__(self, parent)
         label = ttk.Label(self, text="CPUL8R", font="TITLE_FONT").pack()
-        label = ttk.Label(self, text= "WELCOME " + getRecent(), font="TITLE_FONT")
+        label = ttk.Label(self, text= "WELCOME ", font="TITLE_FONT")
         label.pack(pady=10, padx=10)
 
 
@@ -116,7 +123,7 @@ class PageOne(tk.Frame):
 
 
 class AOO(tk.Frame):
-
+    #__init__ method describes what is in our page
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
         tk.Frame.__init__(self, parent)
@@ -163,7 +170,7 @@ class AOO(tk.Frame):
         'APW: ' + str(setPW(self.APW_Entry.get())))
 
 class VOO(tk.Frame):
-
+    #__init__ method describes what is in our page
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
         tk.Frame.__init__(self, parent)
@@ -211,7 +218,7 @@ class VOO(tk.Frame):
 
 
 class AAI(tk.Frame):
-
+    #__init__ method describes what is in our page
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
         tk.Frame.__init__(self, parent)
@@ -265,7 +272,7 @@ class AAI(tk.Frame):
 
 
 class VVI(tk.Frame):
-
+    #__init__ method describes what is in our page
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
         tk.Frame.__init__(self, parent)

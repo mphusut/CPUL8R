@@ -31,8 +31,10 @@ def register(username, password):
         with open('users.json', 'w') as json_file:
             json.dump(data, json_file)
 
+        #return true if registration was successful
         return True
     else:
+        #return false if registration was unsuccessful
         return False
 
 #Checks if username already exists (for register function)
@@ -50,10 +52,11 @@ def checkPassword(username, password):
     if checkUsername(username):
         with open('users.json') as json_file:
             data = json.load(json_file)
-            if data[username]["password"] == password:
-                return True
-            else:
-                return False
+        if data[username]["password"] == password:
+            recent(username)
+            return True
+        else:
+            return False
     else:
         return False
 
