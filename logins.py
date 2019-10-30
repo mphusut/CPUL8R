@@ -106,8 +106,6 @@ def getRecent():
     with open('users.json') as json_file:
         data = json.load(json_file)
         return data["recent"]
-<<<<<<< HEAD
-=======
 
 #Adjusts the input value of the Lower Rate Limit to match the range and increment requirements
 def setLRL(value):
@@ -161,4 +159,3 @@ def setRP(value):
         return 10 * round(value/10)
     else:
          return 500
->>>>>>> 4617afd76158e0df69eef8a84dc54e1a0be4d9ab
