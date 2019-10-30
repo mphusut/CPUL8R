@@ -23,10 +23,10 @@ def register(username, password):
             #initialize user information
             data.update({username:{
             "password":password,
-            "aoo":{"lower":"","upper":"","AAmp":"", "APW":""},
-            "voo":{"lower":"","upper":"","VAmp":"", "VPW":""},
-            "aai":{"lower":"","upper":"","AAmp":"", "APW":"", "ARP":""},
-             "vvi":{"lower":"","upper":"","VAmp":"", "VPW":"", "VRP":""}}})
+            "aoo":{"lower":60,"upper":120,"AAmp":3.5, "APW":0.4},
+            "voo":{"lower":60,"upper":120,"VAmp":3.5, "VPW":0.4},
+            "aai":{"lower":60,"upper":120,"AAmp":3.5, "APW":0.4, "ARP":250},
+             "vvi":{"lower":60,"upper":120,"VAmp":3.5, "VPW":0.4, "VRP":320}}})
         #dumps info into JSON file
         with open('users.json', 'w') as json_file:
             json.dump(data, json_file)

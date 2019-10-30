@@ -165,8 +165,8 @@ class AOO(tk.Frame):
         update(usr, "aoo", "APW", setPW(self.APW_Entry.get()))
 
         return alert('Values added successfully:\n\n' +
-        'lower: ' + str(setLRL(self.LRL_Entry.get())) + '\n'+
-        'upper: ' + str(setURL(self.URL_Entry.get())) + '\n'+
+        'LRL: ' + str(setLRL(self.LRL_Entry.get())) + '\n'+
+        'URL: ' + str(setURL(self.URL_Entry.get())) + '\n'+
         'AAmp: ' + str(setAmp(self.AA_Entry.get())) + '\n'+
         'APW: ' + str(setPW(self.APW_Entry.get())))
 
@@ -212,8 +212,8 @@ class VOO(tk.Frame):
         update(usr, "voo", "VPW", setPW(self.VPW_Entry.get()))
 
         return alert('Values added successfully:\n\n' +
-        'lower: ' + str(setLRL(self.LRL_Entry.get())) + '\n'+
-        'upper: ' + str(setURL(self.URL_Entry.get())) + '\n'+
+        'LRL: ' + str(setLRL(self.LRL_Entry.get())) + '\n'+
+        'URL: ' + str(setURL(self.URL_Entry.get())) + '\n'+
         'VAmp: ' + str(setAmp(self.VA_Entry.get())) + '\n'+
         'VPW: ' + str(setPW(self.VPW_Entry.get())))
 
@@ -265,8 +265,8 @@ class AAI(tk.Frame):
         update(usr, "aai", "ARP", setRP(self.ARP_Entry.get()))
 
         return alert('Values added successfully:\n\n' +
-        'lower: ' + str(setLRL(self.LRL_Entry.get())) + '\n'+
-        'upper: ' + str(setURL(self.URL_Entry.get())) + '\n'+
+        'LRL: ' + str(setLRL(self.LRL_Entry.get())) + '\n'+
+        'URL: ' + str(setURL(self.URL_Entry.get())) + '\n'+
         'AAmp: ' + str(setAmp(self.AA_Entry.get())) + '\n'+
         'APW: ' + str(setPW(self.APW_Entry.get())) + '\n'+
         'ARP: ' + str(setRP(self.ARP_Entry.get())))
@@ -319,8 +319,8 @@ class VVI(tk.Frame):
         update(usr, "vvi", "VRP", setRP(self.VRP_Entry.get()))
 
         return alert('Values added successfully:\n\n' +
-        'lower: ' + str(setLRL(self.LRL_Entry.get())) + '\n'+
-        'upper: ' + str(setURL(self.URL_Entry.get())) + '\n'+
+        'LRL: ' + str(setLRL(self.LRL_Entry.get())) + '\n'+
+        'URL: ' + str(setURL(self.URL_Entry.get())) + '\n'+
         'VAmp: ' + str(setAmp(self.VA_Entry.get())) + '\n'+
         'VPW: ' + str(setPW(self.VPW_Entry.get())) + '\n'+
         'VRP: ' + str(setRP(self.VRP_Entry.get())))
