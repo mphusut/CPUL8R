@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 {"count": 1, "recent": "vijay", "vijay": {"password": "vijay", "aoo": {"lower": 30, "upper": 50, "AAmp": 0, "APW": 0.05}, "voo": {"lower": 60, "upper": 120, "VAmp": 3.5, "VPW": 0.4}, "aai": {"lower": 60, "upper": 120, "AAmp": 3.5, "APW": 0.4, "ARP": 250}, "vvi": {"lower": 60, "upper": 120, "VAmp": 3.5, "VPW": 0.4, "VRP": 320}}}
+=======
+{"count": 2, "recent": "ok", "vijay": {"password": "vijay", "aoo": {"lower": 60, "upper": 120, "AAmp": 3.5, "APW": 0.4}, "voo": {"lower": 60, "upper": 120, "VAmp": 3.5, "VPW": 0.4}, "aai": {"lower": 60, "upper": 120, "AAmp": 3.5, "APW": 0.4, "ARP": 250}, "vvi": {"lower": 60, "upper": 120, "VAmp": 3.5, "VPW": 0.4, "VRP": 320}}, "ok": {"password": "ok", "aoo": {"lower": 60, "upper": 120, "AAmp": 3.5, "APW": 0.4}, "voo": {"lower": 60, "upper": 120, "VAmp": 3.5, "VPW": 0.4}, "aai": {"lower": 60, "upper": 120, "AAmp": 3.5, "APW": 0.4, "ARP": 250}, "vvi": {"lower": 170, "upper": 150, "VAmp": 3.1, "VPW": 0.3, "VRP": 160}}}
+>>>>>>> 4617afd76158e0df69eef8a84dc54e1a0be4d9ab

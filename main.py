@@ -77,7 +77,7 @@ class RegisterPage(tk.Frame):
         ttk.Label(self, text="Password").grid(row = 2, column=0, padx=5, pady=2)
         ttk.Entry(self, textvariable=self.password).grid(row = 2, column=1, padx=(20,40), pady=2)
 
-        ttk.Button(self, text="Register", command=self.adduser).grid(row = 3, column=1, padx=10, pady=5)     #if button is pressed the adduser() method below is activated
+        ttk.Button(self, text="Register", command=self.adduser).grid(row = 3, column=1, padx=10, pady=5)    #if button is pressed the adduser() method below is activated
         ttk.Button(self, text="Back", command=lambda: controller.show_frame(StartPage)).grid(row = 4, column=1,padx=10, pady=5) #Button to go back to the StartPage
 
     #Method to register new users
@@ -100,7 +100,7 @@ class PageOne(tk.Frame):
         label.pack(pady=10, padx=10)
 
 
-
+        #Lists out all the modes 
         AOO_button = ttk.Button(self, text="AOO",
                             command=lambda: controller.show_frame(AOO))
         AOO_button.pack(pady=5, padx=5)
@@ -130,7 +130,8 @@ class AOO(tk.Frame):
         tk.Frame.__init__(self, parent)
         label = ttk.Label(self, text="AOO", font="TITLE_FONT")
         label.grid(pady=10, padx=10, row = 1, column = 3)
-
+        
+        #Entry boxes specifies the range of the inputs. 
         self.LRL_Entry = tk.DoubleVar()
         ttk.Label(self, text="Lower Rate Limit\n(30-175)").grid(row = 2, column=1, pady=(10,0), padx=(10,10))
         ttk.Entry(self, textvariable=self.LRL_Entry).grid(row = 3, column = 1, pady=(10,0), padx=(10,10))
@@ -157,16 +158,16 @@ class AOO(tk.Frame):
         BACK_button.grid(row = 20, column = 0,  pady=(20,20), padx=(10,10))
 
     def aooValues(self):
-        usr = getRecent()
-
+        
+        usr = getRecent() #getRecent() gets the returns the name of the user that is logged in 
         update(usr, "aoo", "lower", setLRL(self.LRL_Entry.get()))
         update(usr, "aoo", "upper", setURL(self.URL_Entry.get()))
         update(usr, "aoo", "AAmp",  setAmp(self.AA_Entry.get()))
         update(usr, "aoo", "APW", setPW(self.APW_Entry.get()))
 
         return alert('Values added successfully:\n\n' +
-        'lower: ' + str(setLRL(self.LRL_Entry.get())) + '\n'+
-        'upper: ' + str(setURL(self.URL_Entry.get())) + '\n'+
+        'LRL: ' + str(setLRL(self.LRL_Entry.get())) + '\n'+
+        'URL: ' + str(setURL(self.URL_Entry.get())) + '\n'+
         'AAmp: ' + str(setAmp(self.AA_Entry.get())) + '\n'+
         'APW: ' + str(setPW(self.APW_Entry.get())))
 
@@ -212,8 +213,8 @@ class VOO(tk.Frame):
         update(usr, "voo", "VPW", setPW(self.VPW_Entry.get()))
 
         return alert('Values added successfully:\n\n' +
-        'lower: ' + str(setLRL(self.LRL_Entry.get())) + '\n'+
-        'upper: ' + str(setURL(self.URL_Entry.get())) + '\n'+
+        'LRL: ' + str(setLRL(self.LRL_Entry.get())) + '\n'+
+        'URL: ' + str(setURL(self.URL_Entry.get())) + '\n'+
         'VAmp: ' + str(setAmp(self.VA_Entry.get())) + '\n'+
         'VPW: ' + str(setPW(self.VPW_Entry.get())))
 
@@ -265,8 +266,8 @@ class AAI(tk.Frame):
         update(usr, "aai", "ARP", setRP(self.ARP_Entry.get()))
 
         return alert('Values added successfully:\n\n' +
-        'lower: ' + str(setLRL(self.LRL_Entry.get())) + '\n'+
-        'upper: ' + str(setURL(self.URL_Entry.get())) + '\n'+
+        'LRL: ' + str(setLRL(self.LRL_Entry.get())) + '\n'+
+        'URL: ' + str(setURL(self.URL_Entry.get())) + '\n'+
         'AAmp: ' + str(setAmp(self.AA_Entry.get())) + '\n'+
         'APW: ' + str(setPW(self.APW_Entry.get())) + '\n'+
         'ARP: ' + str(setRP(self.ARP_Entry.get())))
@@ -319,8 +320,8 @@ class VVI(tk.Frame):
         update(usr, "vvi", "VRP", setRP(self.VRP_Entry.get()))
 
         return alert('Values added successfully:\n\n' +
-        'lower: ' + str(setLRL(self.LRL_Entry.get())) + '\n'+
-        'upper: ' + str(setURL(self.URL_Entry.get())) + '\n'+
+        'LRL: ' + str(setLRL(self.LRL_Entry.get())) + '\n'+
+        'URL: ' + str(setURL(self.URL_Entry.get())) + '\n'+
         'VAmp: ' + str(setAmp(self.VA_Entry.get())) + '\n'+
         'VPW: ' + str(setPW(self.VPW_Entry.get())) + '\n'+
         'VRP: ' + str(setRP(self.VRP_Entry.get())))
